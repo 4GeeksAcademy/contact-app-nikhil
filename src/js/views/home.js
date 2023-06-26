@@ -11,8 +11,13 @@ const Home = () => {
 	const navigate = useNavigate()
 
 	useEffect(() => {
+		initializeAgenda()
 		fetchContacts()
 	},[])
+
+	const initializeAgenda = () => {
+		actions.changeAgenda('4geeks_agenda')
+	}
 
 	const fetchContacts = () => {
 		fetch('https://assets.breatheco.de/apis/fake/contact/agenda/' + store.agenda, {
